@@ -15,7 +15,9 @@ class Todo {
   // late int id;
   // late String title;
   // late bool isDone;
-  Todo({required this.id, required this.title}) : isDone = false;
+  static int _counter = 0;
+
+  Todo({required this.title}) : id = ++_counter, isDone = false;
   String toString(){
   String mark = isDone ? '[x]' : '[ ]';
   return '$mark $id. $title ($status)';

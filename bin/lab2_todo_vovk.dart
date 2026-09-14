@@ -4,7 +4,7 @@ import 'package:ansicolor/ansicolor.dart';
 
 void printMenu(){
   print('');
-  print('ToDo list');
+  print(yellowPen(('ToDo список')));
   print('add - add problem');
   print('list - show every problem');
   print('done - mark as completed');
@@ -87,10 +87,6 @@ final AnsiPen redPen = AnsiPen()..red();
 final AnsiPen bluePen = AnsiPen()..blue();
 final AnsiPen yellowPen = AnsiPen()..yellow();
 
-void printMenu(){
-  print('');
-  print(yellowPen(('ToDo список')));
-}
 
 
 void main() {

@@ -1,5 +1,6 @@
 @override
 class Todo {
+  String get status => isDone ? 'Done' : 'in process';
   int id;
   String title;
   bool isDone;
@@ -16,8 +17,8 @@ class Todo {
   // late bool isDone;
   Todo({required this.id, required this.title}) : isDone = false;
   String toString(){
-  String status = isDone ? '[x]' : '[ ]';
-  return '$status $id. $title';
+  String mark = isDone ? '[x]' : '[ ]';
+  return '$mark $id. $title ($status)';
 }
 
 void complete(){

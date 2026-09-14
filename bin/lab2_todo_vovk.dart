@@ -1,5 +1,6 @@
 import 'package:lab2_todo_vovk/todo.dart';
 import 'dart:io';
+import 'package:ansicolor/ansicolor.dart';
 
 void printMenu(){
   print('');
@@ -16,7 +17,7 @@ void addTodo(List<Todo> todos){
   String? input = stdin.readLineSync();
 
   if (input == null || input.trim().isEmpty){
-    print('Error: name can not be empty');
+    print(redPen(('Error: name can not be empty')));
     return;
   }
 
@@ -80,6 +81,17 @@ void deleteTodo(List<Todo> todos) {
   }
   print('Problem with ID $id is not found');
 }
+
+final AnsiPen greenPen = AnsiPen()..green();
+final AnsiPen redPen = AnsiPen()..red();
+final AnsiPen bluePen = AnsiPen()..blue();
+final AnsiPen yellowPen = AnsiPen()..yellow();
+
+void printMenu(){
+  print('');
+  print(yellowPen(('ToDo список')));
+}
+
 
 void main() {
   List<Todo> todos = [];
